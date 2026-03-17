@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Blocker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="popup-container">
+    <div class="popup-header">
+      <img src="icon.png" alt="Icon" class="popup-icon">
+      <h2>AI & Productivity Blocker</h2>
+    </div>
+    
+    <div class="popup-content">
+      <div class="status-section">
+        <h3>Status</h3>
+        <p id="statusMessage">Checking status...</p>
+      </div>
+      
+      <div class="info-section">
+        <h3>Blocked Sites</h3>
+        <ul>
+          <li>All AI websites (ChatGPT, Claude, DeepSeek, etc.)</li>
+          <li>Google Docs</li>
+          <li>Google Sheets</li>
+          <li>Google Slides</li>
+        </ul>
+      </div>
+      
+      <div class="unblock-section">
+        <h3>Temporary Unblock</h3>
+        <p>Enter password to unblock all sites for 1 hour:</p>
+        <input type="password" id="popupPassword" placeholder="Enter password">
+        <button id="popupUnblockBtn">Unblock for 1 hour</button>
+        <p id="popupErrorMessage" class="error-message"></p>
+        <p id="timerDisplay" class="timer"></p>
+      </div>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
