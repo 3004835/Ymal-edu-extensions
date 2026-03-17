@@ -146,19 +146,20 @@ const blockedDomains = [
 ];
 
 const rules = blockedDomains.map((domain, index) => ({
-    id: index + 1,
-    priority: 1,
-    action: { 
-        type: "redirect", 
-        redirect: { extensionPath: "/blocked.html" } 
-    },
-    condition: { 
-        urlFilter: `||${domain}`, 
-        resourceTypes: ["main_frame"] 
-    }
+  id: index + 1,
+  priority: 1,
+  action: {
+    type: "redirect",
+    redirect: { extensionPath: "/blocked.html" }
+  },
+  condition: {
+    urlFilter: `||${domain}`,
+    resourceTypes: ["main_frame"]
+  }
 }));
 
 chrome.declarativeNetRequest.updateDynamicRules({
-    removeRuleIds: rules.map(r => r.id),
-    addRules: rules
+  removeRuleIds: rules.map(r => r.id),
+  addRules: rules
 });
+
