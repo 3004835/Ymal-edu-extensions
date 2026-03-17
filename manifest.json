@@ -1,8 +1,25 @@
 {
   "manifest_version": 3,
-  "name": "West Scranton Intermediate School Theme",
+  "name": "West Scranton Intermediate School",
   "version": "1.0",
-  "description": "Official Chrome theme for West Scranton Intermediate School",
+  "description": "Official Chrome theme and cleaner for West Scranton Intermediate School",
+  "permissions": [
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["styles.css"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": true,
+      "match_about_blank": true
+    }
+  ],
   "theme": {
     "images": {
       "theme_frame": "images/school_logo.png"
@@ -13,21 +30,38 @@
       "frame_incognito": [0, 51, 160],
       "frame_incognito_inactive": [80, 80, 80],
       "toolbar": [255, 255, 255],
-      "tab_text": [0, 51, 160],
-      "tab_background_text": [255, 255, 255],
+      "tab_text": [255, 255, 255],
+      "tab_background_text": [200, 200, 200],
       "bookmark_text": [0, 51, 160],
       "ntp_background": [255, 255, 255],
       "ntp_text": [0, 51, 160],
-      "button_background": [0, 51, 160, 0.1],
+      "omnibox_background": [255, 255, 255],
       "omnibox_text": [0, 0, 0],
-      "omnibox_background": [255, 255, 255]
+      "background_tab": [0, 51, 160, 0.5]
     },
     "tints": {
-      "buttons": [0.6, 0.5, 0.8]
+      "buttons": [0.6, 0.2, 0.8]
     },
     "properties": {
       "ntp_background_alignment": "bottom",
       "ntp_background_repeat": "no-repeat"
     }
-  }
+  },
+  "action": {
+    "default_title": "WSIS Clean Browser",
+    "default_icon": {
+      "16": "images/school_logo.png",
+      "48": "images/school_logo.png",
+      "128": "images/school_logo.png"
+    }
+  },
+  "icons": {
+    "16": "images/school_logo.png",
+    "48": "images/school_logo.png",
+    "128": "images/school_logo.png"
+  },
+  "web_accessible_resources": [{
+    "resources": ["styles.css", "hide-extensions.css"],
+    "matches": ["<all_urls>"]
+  }]
 }
