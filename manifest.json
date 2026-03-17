@@ -1,37 +1,33 @@
 {
   "manifest_version": 3,
-  "name": "AI & Productivity Blocker",
+  "name": "West Scranton Intermediate School Theme",
   "version": "1.0",
-  "description": "Blocks AI websites and Google Docs/Sheets/Slides with password protection",
-  "permissions": [
-    "storage",
-    "webNavigation",
-    "tabs"
-  ],
-  "host_permissions": [
-    "<all_urls>"
-  ],
-  "background": {
-    "service_worker": "background.js"
-  },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["content.js"],
-      "run_at": "document_start"
+  "description": "Official Chrome theme for West Scranton Intermediate School",
+  "theme": {
+    "images": {
+      "theme_frame": "images/school_logo.png"
+    },
+    "colors": {
+      "frame": [0, 51, 160],
+      "frame_inactive": [100, 100, 100],
+      "frame_incognito": [0, 51, 160],
+      "frame_incognito_inactive": [80, 80, 80],
+      "toolbar": [255, 255, 255],
+      "tab_text": [0, 51, 160],
+      "tab_background_text": [255, 255, 255],
+      "bookmark_text": [0, 51, 160],
+      "ntp_background": [255, 255, 255],
+      "ntp_text": [0, 51, 160],
+      "button_background": [0, 51, 160, 0.1],
+      "omnibox_text": [0, 0, 0],
+      "omnibox_background": [255, 255, 255]
+    },
+    "tints": {
+      "buttons": [0.6, 0.5, 0.8]
+    },
+    "properties": {
+      "ntp_background_alignment": "bottom",
+      "ntp_background_repeat": "no-repeat"
     }
-  ],
-  "action": {
-    "default_popup": "popup.html",
-    "default_icon": {
-      "16": "icon.png",
-      "48": "icon.png",
-      "128": "icon.png"
-    }
-  },
-  "icons": {
-    "16": "icon.png",
-    "48": "icon.png",
-    "128": "icon.png"
   }
 }
