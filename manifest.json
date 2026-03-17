@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Ymal Edu",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Blocks access to AI websites for YMAL.space.",
   "icons": {
     "48": "icon.png",
@@ -91,9 +91,7 @@
         "*://*.lmsys.org/*",
         "*://*.chat.lmsys.org/*",
         "*://*.open-assistant.io/*",
-        "*://*.anthropic.com/*",
         "*://*.constitutional.ai/*",
-        "*://*.anthropic.com/claude/*",
         "*://*.sambanova.ai/*",
         "*://*.mosaicml.com/*",
         "*://*.databricks.com/*",
@@ -134,7 +132,6 @@
         "*://*.zapier.com/*",
         "*://*.integromat.com/*",
         "*://*.tines.io/*",
-        "*://*.retool.com/workflows/*",
         "*://*.airkit.com/*",
         "*://*.voiceflow.com/*",
         "*://*.botpress.com/*",
@@ -194,6 +191,12 @@
       ],
       "js": ["content.js"],
       "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["icon.png"],
+      "matches": ["<all_urls>"]
     }
   ]
 }
