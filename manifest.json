@@ -2,66 +2,35 @@
   "manifest_version": 3,
   "name": "West Scranton Intermediate School",
   "version": "1.0",
-  "description": "Official Chrome theme and cleaner for West Scranton Intermediate School",
-  "permissions": [
-    "storage",
-    "scripting"
-  ],
-  "host_permissions": [
-    "<all_urls>"
-  ],
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "css": ["styles.css"],
-      "js": ["content.js"],
-      "run_at": "document_start",
-      "all_frames": true,
-      "match_about_blank": true
-    }
-  ],
+  "description": "Official Chrome theme for West Scranton Intermediate School - Blue & White",
   "theme": {
     "images": {
       "theme_frame": "images/school_logo.png"
     },
     "colors": {
       "frame": [0, 51, 160],
-      "frame_inactive": [100, 100, 100],
+      "frame_inactive": [70, 70, 70],
       "frame_incognito": [0, 51, 160],
-      "frame_incognito_inactive": [80, 80, 80],
+      "frame_incognito_inactive": [60, 60, 60],
       "toolbar": [255, 255, 255],
       "tab_text": [255, 255, 255],
-      "tab_background_text": [200, 200, 200],
+      "tab_background_text": [220, 220, 220],
       "bookmark_text": [0, 51, 160],
       "ntp_background": [255, 255, 255],
       "ntp_text": [0, 51, 160],
       "omnibox_background": [255, 255, 255],
       "omnibox_text": [0, 0, 0],
-      "background_tab": [0, 51, 160, 0.5]
+      "ntp_header": [0, 51, 160],
+      "ntp_link": [0, 51, 160],
+      "ntp_section": [255, 255, 255],
+      "button_background": [0, 51, 160, 0.1]
     },
     "tints": {
-      "buttons": [0.6, 0.2, 0.8]
+      "buttons": [0.6, 0.5, 0.9]
     },
     "properties": {
       "ntp_background_alignment": "bottom",
       "ntp_background_repeat": "no-repeat"
     }
-  },
-  "action": {
-    "default_title": "WSIS Clean Browser",
-    "default_icon": {
-      "16": "images/school_logo.png",
-      "48": "images/school_logo.png",
-      "128": "images/school_logo.png"
-    }
-  },
-  "icons": {
-    "16": "images/school_logo.png",
-    "48": "images/school_logo.png",
-    "128": "images/school_logo.png"
-  },
-  "web_accessible_resources": [{
-    "resources": ["styles.css", "hide-extensions.css"],
-    "matches": ["<all_urls>"]
-  }]
+  }
 }
