@@ -145,28 +145,20 @@ const blockedDomains = [
     "aiden.ai", "tractable.ai", "shift-technology.com"
 ];
 
-// Convert domains to proper URL filters for declarativeNetRequest
-const urlFilters = blockedDomains.map(domain => {
-    // Handle domains with paths (like "bing.com/chat")
-    if (domain.includes('/')) {
-        return `*://*.${domain}/*`;
+const rules = blockedDomains.map((domain, index) => ({
+    id: index + 1,
+    priority: 1,
+    action: { 
+        type: "redirect", 
+        redirect: { extensionPath: "/blocked.html" } 
+    },
+    condition: { 
+        urlFilter: `||${domain}`, 
+        resourceTypes: ["main_frame"] 
     }
-    // Handle regular domains
-    return `*://*.${domain}/*`;
-});
+}));
 
-// This blocks the connection before the site even starts loading
 chrome.declarativeNetRequest.updateDynamicRules({
-    addRules: urlFilters.map((filter, index) => ({
-        id: index + 1,
-        priority: 1,
-        action: { type: "block" },
-        condition: { 
-            urlFilter: filter.replace('*://*.', '||').replace('/*', ''),
-            resourceTypes: ["main_frame"] 
-        }
-    })),
-    removeRuleIds: Array.from({ length: urlFilters.length }, (_, i) => i + 1)
+    removeRuleIds: rules.map(r => r.id),
+    addRules: rules
 });
-
-console.log(`Ymal Edu: Blocking ${blockedDomains.length} AI websites`);
