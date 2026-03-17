@@ -1,16 +1,37 @@
 {
   "manifest_version": 3,
-  "name": "Ymal Edu",
-  "version": "2.1",
-  "description": "Enterprise-grade AI blocking for YMAL.space.",
-  "icons": { "128": "icon.png" },
-  "permissions": ["declarativeNetRequest", "storage"],
-  "host_permissions": ["*://*/*"],
-  "background": { "service_worker": "background.js" },
-  "web_accessible_resources": [
+  "name": "AI & Productivity Blocker",
+  "version": "1.0",
+  "description": "Blocks AI websites and Google Docs/Sheets/Slides with password protection",
+  "permissions": [
+    "storage",
+    "webNavigation",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
     {
-      "resources": ["blocked.html", "icon.png"],
-      "matches": ["<all_urls>"]
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
     }
-  ]
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  }
 }
