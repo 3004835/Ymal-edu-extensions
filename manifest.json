@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Ymal Edu",
+  "version": "1.0",
+  "description": "Blocks access to AI websites for YMAL.space.",
+  "icons": {
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.chatgpt.com/*",
+        "*://*.openai.com/*",
+        "*://*.claude.ai/*",
+        "*://*.anthropic.com/*",
+        "*://gemini.google.com/*",
+        "*://*.perplexity.ai/*",
+        "*://copilot.microsoft.com/*",
+        "*://*.meta.ai/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
