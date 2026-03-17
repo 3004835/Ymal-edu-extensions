@@ -2,6 +2,8 @@
   "manifest_version": 3,
   "name": "Ymal Edu",
   "version": "2.1",
+  "description": "Enterprise-grade AI blocking for YMAL.space.",
+  "icons": { "128": "icon.png" },
   "permissions": ["declarativeNetRequest", "storage"],
   "host_permissions": ["*://*/*"],
   "background": { "service_worker": "background.js" },
