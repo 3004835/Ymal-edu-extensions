@@ -1,0 +1,195 @@
+/* West Scranton Intermediate School - Blue & White Theme */
+
+/* Custom Scrollbar - Blue & White */
+::-webkit-scrollbar {
+  width: 14px !important;
+  height: 14px !important;
+  background: #ffffff !important;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff !important;
+  border-radius: 8px !important;
+  border: 1px solid #0033a0 !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0033a0 !important;
+  border-radius: 8px !important;
+  border: 2px solid #ffffff !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #002070 !important;
+}
+
+::-webkit-scrollbar-corner {
+  background: #ffffff !important;
+}
+
+/* Firefox scrollbar support */
+* {
+  scrollbar-color: #0033a0 #ffffff !important;
+  scrollbar-width: thin !important;
+}
+
+/* Hide ALL extension icons and buttons */
+[class*="extension"],
+[id*="extension"],
+[class*="Extension"],
+[id*="Extension"],
+[data-extension-id],
+[data-extension-name],
+[data-extension-type="extension"],
+.extension-indicator,
+.extension-badge,
+.extension-popup,
+.extension-action,
+.extension-bubble,
+.extensions-menu,
+.page-action,
+.browser-action,
+#extensions-container,
+#extension-bubble,
+#extensions-manager,
+#extensions-view,
+#extension-bar,
+#extensions-bar,
+#toolbar-extension-buttons,
+.extension-buttons-wrapper,
+[aria-label*="extension"],
+[aria-label*="Extension"],
+[title*="extension"],
+[title*="Extension"],
+[role="button"][title*="extension"],
+toolbar-button[title*="extension"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+/* Specific Blocksi handling - make it tiny but still functional */
+[class*="blocksi"],
+[id*="blocksi"],
+[class*="Blocksi"],
+[id*="Blocksi"],
+img[src*="blocksi"],
+div:has(> [class*="blocksi"]),
+iframe[src*="blocksi"],
+[data-blocksi],
+[data-extension-id*="blocksi"] {
+  opacity: 0.15 !important;
+  transform: scale(0.3) !important;
+  position: fixed !important;
+  bottom: 2px !important;
+  right: 2px !important;
+  z-index: 999999 !important;
+  width: 20px !important;
+  height: 20px !important;
+  min-width: 20px !important;
+  min-height: 20px !important;
+  max-width: 20px !important;
+  max-height: 20px !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  transition: all 0.2s ease !important;
+  background: transparent !important;
+  pointer-events: auto !important;
+}
+
+[class*="blocksi"]:hover,
+[id*="blocksi"]:hover,
+[data-blocksi]:hover {
+  opacity: 0.8 !important;
+  transform: scale(0.8) !important;
+  width: 30px !important;
+  height: 30px !important;
+}
+
+/* Hide Chrome's extension menu button */
+#extensions-button,
+#extensions-menu-button,
+#unified-extensions-button,
+#unified-extensions-view,
+[aria-label="Extensions"],
+[aria-label*="extensions"],
+[tooltip="Extensions"],
+[title="Extensions"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Clean up toolbar - White theme with blue accent */
+#toolbar,
+#nav-bar,
+#main-toolbar,
+#toolbar-container,
+.browser-toolbar {
+  background-color: #ffffff !important;
+  border-bottom: 2px solid #0033a0 !important;
+}
+
+/* URL bar styling */
+#urlbar,
+#urlbar-background,
+#searchbar,
+#navigator-toolbox {
+  background-color: #ffffff !important;
+  border-color: #0033a0 !important;
+}
+
+/* Tab styling */
+.tabbrowser-tab,
+.tab-background,
+.tab-content {
+  background-color: #ffffff !important;
+  color: #0033a0 !important;
+}
+
+.tabbrowser-tab[selected="true"],
+.tab-background[selected="true"] {
+  background-color: #0033a0 !important;
+  color: #ffffff !important;
+}
+
+/* Bookmark bar */
+#bookmarks-view,
+#personal-bookmarks,
+#bookmarks-bar,
+#PlacesToolbar,
+#PlacesToolbarItems {
+  background-color: #ffffff !important;
+  color: #0033a0 !important;
+  border-bottom: 1px solid #0033a0 !important;
+}
+
+/* New tab page */
+@-moz-document url(about:newtab), url(about:home), url(about:blank) {
+  body, #root, .outer-wrapper, main {
+    background-color: #ffffff !important;
+  }
+  
+  .card, .top-site-button, .section-top-bar {
+    background-color: #ffffff !important;
+    border: 1px solid #0033a0 !important;
+    color: #0033a0 !important;
+  }
+  
+  .icon, .title {
+    color: #0033a0 !important;
+  }
+}
